@@ -8,6 +8,10 @@ document.querySelector('form').addEventListener('submit', e => {
   const encrypted = btoa(input.value);
 
   //Generate the URL to share with friends
-  document.querySelector('#link-input').value = `${window.location}#${encrypted}`;
+  const linkInput = document.querySelector('#link-input');
+  linkInput.value = `${window.location}#${encrypted}`;
+
+  //Select the url when user clicks create
+  linkInput.select();
 
 })
