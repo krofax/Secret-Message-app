@@ -1,6 +1,10 @@
 document.querySelector('form').addEventListener('submit', e => {
   e.preventDefault()
 
+  //Toggle visibility betwwen the message form and the share link URL
+  document.querySelector('#message-form').classList.add('hide')
+  document.querySelector('#link-form').classList.remove('hide')
+
   //Take the input message
   const input = document.querySelector('#message-input')
 
@@ -11,7 +15,7 @@ document.querySelector('form').addEventListener('submit', e => {
   const linkInput = document.querySelector('#link-input');
   linkInput.value = `${window.location}#${encrypted}`;
 
-  //Select the url when user clicks create
+  //Select the url automatically when user clicks the create button
   linkInput.select();
 
 })
